@@ -25,7 +25,10 @@ conda install pre-commit
 ```
 3. Run `pre-commit install` to install the git hook
 
-4. Make your changes and commit. You will see pre-commit running the hooks automatically
+4. Make your changes and commit. You will see pre-commit running the hooks automatically. If you want to run it on existing files run 
+```
+pre-commit run --all-files  
+```
 
 ## Available Hooks
 - `check-yaml`: checks yaml file for proper formatting
