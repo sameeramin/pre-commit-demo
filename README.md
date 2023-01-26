@@ -2,8 +2,8 @@
 This is a demo repository that demonstrates how to integrate pre-commit in a project consisting of various files including text, yaml, python, javascript, css, and html.
 
 ## Prerequisites
-- pre-commit
-- Git
+- [pre-commit](https://pre-commit.com/)
+- [Git](https://git-scm.com/)
 
 ## Setup
 
@@ -37,7 +37,7 @@ pre-commit run --all-files
 - `black`: auto-formats python code to conform to PEP8 style
 - `flake8`: checks for code style and errors
 
-You can add more hooks as per your project requirements
+You can add more hooks as per your project requirements. Here's the [list](https://pre-commit.com/hooks.html) of all supported hooks and you can also create your own hooks as well!
 
 ## Note
 Make sure you have all the necessary dependencies installed before running the pre-commit hooks
