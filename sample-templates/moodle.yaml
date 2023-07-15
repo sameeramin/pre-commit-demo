@@ -1,0 +1,65 @@
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v2.3.0
+      hooks:
+          - id: end-of-file-fixer
+          - id: check-yaml
+          - id: trailing-whitespace
+          - id: check-added-large-files
+            args: [--maxkb=800]
+          - id: detect-aws-credentials
+            args: [--allow-missing-credentials]
+          - id: detect-private-key
+          - id: forbid-new-submodules
+          - id: mixed-line-ending
+    - repo: https://github.com/digitalpulp/pre-commit-php.git
+      rev: 1.4.0
+      hooks:
+          - id: php-cs
+            files: \.(php)$
+            args:
+                [
+                    --standard=phpcs.xml.dist,
+                    --colors,
+                    --error-severity=1,
+                    --ignore=*blade.php*,
+                    --tab-width=4,
+                    --encoding=utf-8,
+                    --extensions=php,
+                    -d memory_limit=32M,
+                    -ns,
+                ]
+          - id: php-cbf
+            files: \.(php)$
+            args:
+                [
+                    --standard=phpcs.xml.dist,
+                    --colors,
+                    --error-severity=1,
+                    --ignore=*blade.php*,
+                    --tab-width=4,
+                    --encoding=utf-8,
+                    --extensions=php,
+                    -d memory_limit=32M,
+                    -ns,
+                ]
+    - repo: https://github.com/pre-commit/mirrors-prettier
+      rev: v2.7.1
+      hooks:
+          - id: prettier
+            additional_dependencies:
+                - prettier@2.8.1
+            args:
+                [
+                    --write,
+                    --prose-wrap=always,
+                    --print-width=120,
+                    --semi=true,
+                    --arrow-parens=always,
+                    --trailing-comma=all,
+                    --end-of-line=lf,
+                ]
+    - repo: https://github.com/sameeramin/pre-commit-hooks.git
+      rev: v1.0.1
+      hooks:
+          - id: check-console-log
